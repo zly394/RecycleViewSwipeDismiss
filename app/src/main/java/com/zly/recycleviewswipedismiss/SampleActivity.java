@@ -2,12 +2,14 @@ package com.zly.recycleviewswipedismiss;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -41,8 +43,24 @@ public class SampleActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                mData.remove(viewHolder.getAdapterPosition());
+                final int pos = viewHolder.getAdapterPosition();
+                final String item = mData.get(pos);
+                mData.remove(pos);
                 mSampleAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+                String text;
+                if (direction == ItemTouchHelper.RIGHT) {
+                    text = "删除一项";
+                } else {
+                    text = "延迟一项";
+                }
+                Snackbar.make(viewHolder.itemView, text, Snackbar.LENGTH_LONG)
+                        .setAction("撤销", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                mData.add(pos, item);
+                                mSampleAdapter.notifyItemInserted(pos);
+                            }
+                        }).show();
             }
 
             @Override
