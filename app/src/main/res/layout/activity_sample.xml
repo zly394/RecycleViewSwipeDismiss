@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zly.recycleviewswipedismiss.MainActivity">
+    tools:context=".SampleActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:scrollbars="vertical"
+        tools:listitem="@layout/list_item_sample"/>
 </RelativeLayout>

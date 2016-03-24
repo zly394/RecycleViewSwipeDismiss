@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@mipmap/bt_ic_done_white_24" />
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:id="@+id/tv_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            tools:text="Item" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@mipmap/bt_ic_schedule_white_24" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ll_item"
+        android:background="#B2B2b2" />
+
+</RelativeLayout>
