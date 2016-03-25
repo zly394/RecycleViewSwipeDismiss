@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -40,12 +41,16 @@ public class SampleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         View vBackground;
         View vItem;
         TextView tvItem;
+        ImageView ivDone;
+        ImageView ivSchedule;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             vBackground = itemView.findViewById(R.id.rl_background);
             vItem = itemView.findViewById(R.id.ll_item);
             tvItem = (TextView) itemView.findViewById(R.id.tv_item);
+            ivDone = (ImageView) itemView.findViewById(R.id.iv_done);
+            ivSchedule = (ImageView) itemView.findViewById(R.id.iv_schedule);
         }
     }
 }

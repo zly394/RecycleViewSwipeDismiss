@@ -67,6 +67,8 @@ public class SampleActivity extends AppCompatActivity {
             public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
                 getDefaultUIUtil().clearView(((SampleAdapter.ItemViewHolder) viewHolder).vItem);
                 ((SampleAdapter.ItemViewHolder) viewHolder).vBackground.setBackgroundColor(Color.TRANSPARENT);
+                ((SampleAdapter.ItemViewHolder) viewHolder).ivSchedule.setVisibility(View.GONE);
+                ((SampleAdapter.ItemViewHolder) viewHolder).ivDone.setVisibility(View.GONE);
             }
 
             @Override
@@ -82,8 +84,12 @@ public class SampleActivity extends AppCompatActivity {
                 if (Math.abs(dX) < 200) { // 降低设置背景的频率
                     if (dX > 0) {
                         ((SampleAdapter.ItemViewHolder) viewHolder).vBackground.setBackgroundResource(R.color.colorDone);
+                        ((SampleAdapter.ItemViewHolder) viewHolder).ivDone.setVisibility(View.VISIBLE);
+                        ((SampleAdapter.ItemViewHolder) viewHolder).ivSchedule.setVisibility(View.GONE);
                     } else {
                         ((SampleAdapter.ItemViewHolder) viewHolder).vBackground.setBackgroundResource(R.color.colorSchedule);
+                        ((SampleAdapter.ItemViewHolder) viewHolder).ivSchedule.setVisibility(View.VISIBLE);
+                        ((SampleAdapter.ItemViewHolder) viewHolder).ivDone.setVisibility(View.GONE);
                     }
                 }
             }
