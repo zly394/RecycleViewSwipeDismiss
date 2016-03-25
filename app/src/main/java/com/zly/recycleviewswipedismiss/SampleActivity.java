@@ -79,10 +79,12 @@ public class SampleActivity extends AppCompatActivity {
             @Override
             public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
                 getDefaultUIUtil().onDraw(c, recyclerView, ((SampleAdapter.ItemViewHolder) viewHolder).vItem, dX, dY, actionState, isCurrentlyActive);
-                if (dX > 0) {
-                    ((SampleAdapter.ItemViewHolder) viewHolder).vBackground.setBackgroundResource(R.color.colorDone);
-                } else {
-                    ((SampleAdapter.ItemViewHolder) viewHolder).vBackground.setBackgroundResource(R.color.colorSchedule);
+                if (Math.abs(dX) < 200) { // 降低设置背景的频率
+                    if (dX > 0) {
+                        ((SampleAdapter.ItemViewHolder) viewHolder).vBackground.setBackgroundResource(R.color.colorDone);
+                    } else {
+                        ((SampleAdapter.ItemViewHolder) viewHolder).vBackground.setBackgroundResource(R.color.colorSchedule);
+                    }
                 }
             }
 
