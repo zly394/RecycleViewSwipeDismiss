@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -37,15 +38,19 @@ public class SampleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     static class ItemViewHolder extends RecyclerView.ViewHolder {
-        View vBackground;
+        View vBackground; // 背景
         View vItem;
-        TextView tvItem;
+        TextView tvItem; // 滑动的view
+        ImageView ivDone;
+        ImageView ivSchedule;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             vBackground = itemView.findViewById(R.id.rl_background);
             vItem = itemView.findViewById(R.id.ll_item);
             tvItem = (TextView) itemView.findViewById(R.id.tv_item);
+            ivDone = (ImageView) itemView.findViewById(R.id.iv_done);
+            ivSchedule = (ImageView) itemView.findViewById(R.id.iv_schedule);
         }
     }
 }
