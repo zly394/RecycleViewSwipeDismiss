@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--背景view，用于提示用户操作结果-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rl_background"
@@ -24,6 +25,7 @@
         android:layout_marginRight="16dp"
         android:src="@mipmap/bt_ic_schedule_white_24" />
 
+    <!--滑动操作的view-->
     <LinearLayout
         android:id="@+id/ll_item"
         android:layout_width="match_parent"

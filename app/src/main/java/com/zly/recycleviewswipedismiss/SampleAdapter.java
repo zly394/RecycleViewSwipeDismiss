@@ -38,9 +38,9 @@ public class SampleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     static class ItemViewHolder extends RecyclerView.ViewHolder {
-        View vBackground;
+        View vBackground; // 背景
         View vItem;
-        TextView tvItem;
+        TextView tvItem; // 滑动的view
         ImageView ivDone;
         ImageView ivSchedule;
 
